@@ -46,3 +46,8 @@ class War:
             print(f"{self.player2.name} wins!")
         else: 
             print("IT'S A TIE")
+            
+            
+            
+            
+print("GITHUB IS THE WPRST")
