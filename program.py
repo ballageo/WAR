@@ -17,3 +17,5 @@ if __name__ == "__main__":
     # Jon.print_hand()
     war.play_game()
     deck.shuffle()
+    print(Jon.discard[0])
+    print(Jon.discard[1])

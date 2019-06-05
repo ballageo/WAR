@@ -47,7 +47,3 @@ class War:
         else: 
             print("IT'S A TIE")
             
-            
-            
-            
-print("GITHUB IS THE WPRST")

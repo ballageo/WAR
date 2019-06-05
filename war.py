@@ -23,13 +23,17 @@ class War:
         # print(self.player2.hand[len(self.player2.hand)-1].value)
             if self.player1.hand[len(self.player1.hand)-1].value > self.player2.hand[len(self.player2.hand)-1].value:
                 player1count+=1
-                self.player1.hand.pop()
-                self.player2.hand.pop()
+                p1_card = self.player1.hand.pop()
+                self.player1.discard.append(p1_card)
+                p2_lost_card = self.player2.hand.pop()
+                self.player1.discard.append(p2_lost_card)
 
             elif self.player1.hand[len(self.player1.hand)-1].value < self.player2.hand[len(self.player2.hand)-1].value:
                 player2count+=1
-                self.player2.hand.pop()
-                self.player1.hand.pop()
+                p2_card = self.player1.hand.pop()
+                self.player2.discard.append(p2_card)
+                p1_lost_card = self.player2.hand.pop()
+                self.player2.discard.append(p1_lost_card)
 
             else: 
                 ties+=1
@@ -46,5 +50,11 @@ class War:
             print(f"{self.player2.name} wins!")
         else: 
             print("IT'S A TIE")
+        
+    def discard_pile_to_hand(self):
+        
+        if len(self.player1.hand) == 0:
+            self.player1.hand = self.player1.discard
+            self.player1.discard = []
         
         
